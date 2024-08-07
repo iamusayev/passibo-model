@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: create stores table
+      author: Anar Musayev
+      changes:
+        - createTable:
+            tableName: stores
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: latitude
+                  type: DOUBLE PRECISION
+              - column:
+                  name: longitude
+                  type: DOUBLE PRECISION
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: open_from
+                  type: TIME
+              - column:
+                  name: open_to
+                  type: TIME

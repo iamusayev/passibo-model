@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: create cashback_balance table
+      author: Anar Musayev
+      changes:
+        - createTable:
+            tableName: cashback_balance
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  name: value
+                  type: NUMERIC(10, 2)
