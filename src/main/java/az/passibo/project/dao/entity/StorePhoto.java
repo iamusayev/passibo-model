@@ -1,0 +1,29 @@
+package az.passibo.project.dao.entity;
+
+import lombok.Data;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import static javax.persistence.FetchType.LAZY;
+import static javax.persistence.GenerationType.IDENTITY;
+
+@Data
+@Entity
+@Table(name = "store_photos")
+public class StorePhoto {
+
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = LAZY)
+    private Store store;
+
+    private boolean isMain;
+
+    private String photoUrl;
+}

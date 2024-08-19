@@ -13,6 +13,15 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
               - column:
+                  name: recommended_order
+                  type: INTEGER
+              - column:
+                  name: address
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: TEXT
+              - column:
                   name: latitude
                   type: DOUBLE PRECISION
               - column:
@@ -22,8 +31,14 @@ databaseChangeLog:
                   name: name
                   type: VARCHAR(255)
               - column:
-                  name: open_from
+                  name: working_hours_from
                   type: TIME
               - column:
                   name: open_to
-                  type: TIME
+                  type: working_hours_from
+              - column:
+                  name: cashback_policy_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_store_cashback_policies
+                    references: cashback_policies(id)

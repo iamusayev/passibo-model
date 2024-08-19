@@ -13,6 +13,10 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
               - column:
+                  name: is_main
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+              - column:
                   name: store_id
                   type: bigint
                   constraints:

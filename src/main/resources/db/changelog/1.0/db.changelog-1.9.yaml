@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create store_cashback table
+      id: create cashback_policies table
       author: Anar Musayev
       changes:
         - createTable:
-            tableName: store_cashback
+            tableName: cashback_policies
             columns:
               - column:
                   name: id
@@ -16,14 +16,14 @@ databaseChangeLog:
                   name: is_active
                   type: BOOLEAN
               - column:
-                  name: store_rate
+                  name: stores_percentage
                   type: DOUBLE PRECISION
               - column:
-                  name: user_rate
+                  name: user_percentage
                   type: DOUBLE PRECISION
               - column:
                   name: store_id
                   type: BIGINT
                   constraints:
-                    foreignKeyName: fk_store_cashback_store
+                    foreignKeyName: fk_store_cashback_policies
                     references: stores(id)
