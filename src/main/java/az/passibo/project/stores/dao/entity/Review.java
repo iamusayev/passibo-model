@@ -1,5 +1,6 @@
-package az.passibo.project.entity;
+package az.passibo.project.stores.dao.entity;
 
+import az.passibo.project.entity.User;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;

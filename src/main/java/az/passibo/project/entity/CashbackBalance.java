@@ -1,6 +1,5 @@
-package com.example.demo.entity;
+package az.passibo.project.entity;
 
-import az.passibo.project.entity.User;
 import lombok.Data;
 
 import javax.persistence.Entity;

@@ -1,26 +1,34 @@
 databaseChangeLog:
   - changeSet:
-      id: create store_photos table
+      id: create drinks table
       author: Anar Musayev
       changes:
         - createTable:
-            tableName: store_photos
+            tableName: drinks
             columns:
               - column:
                   name: id
-                  type: bigint
+                  type: BIGINT
                   autoIncrement: true
                   constraints:
                     primaryKey: true
               - column:
-                  name: store_id
-                  type: bigint
+                  name: name
+                  type: VARCHAR(255)
                   constraints:
                     nullable: false
-                    foreignKeyName: fk_store_photos_store_id
-                    references: stores(id)
               - column:
-                  name: photo_url
-                  type: varchar(255)
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: price
+                  type: DOUBLE PRECISION
                   constraints:
                     nullable: false
+              - column:
+                  name: store_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_drinks_store_id
+                    references: stores(id)

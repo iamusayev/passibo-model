@@ -1,5 +1,6 @@
 package az.passibo.project.entity;
 
+import az.passibo.project.stores.dao.entity.Store;
 import lombok.Data;
 
 import javax.persistence.Entity;

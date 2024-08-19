@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create drinks table
+      id: create drink_photos table
       author: Anar Musayev
       changes:
         - createTable:
-            tableName: drinks
+            tableName: drink_photos
             columns:
               - column:
                   name: id
@@ -13,22 +13,14 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
               - column:
-                  name: name
+                  name: photo_url
                   type: VARCHAR(255)
                   constraints:
                     nullable: false
               - column:
-                  name: description
-                  type: VARCHAR(255)
-              - column:
-                  name: price
-                  type: DOUBLE PRECISION
-                  constraints:
-                    nullable: false
-              - column:
-                  name: store_id
+                  name: drink_id
                   type: BIGINT
                   constraints:
                     nullable: false
-                    foreignKeyName: fk_drinks_store_id
-                    references: stores(id)
+                    foreignKeyName: fk_drink_photos_drink_id
+                    references: drinks(id)

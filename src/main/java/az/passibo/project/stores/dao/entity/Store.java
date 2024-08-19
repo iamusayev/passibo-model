@@ -1,5 +1,8 @@
-package az.passibo.project.entity;
+package az.passibo.project.stores.dao.entity;
 
+import az.passibo.project.entity.FavoriteStore;
+import az.passibo.project.entity.StoreCategory;
+import az.passibo.project.entity.StoreOffer;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -35,8 +38,11 @@ public class Store {
     private List<StoreCategory> storeCategories;
 
     @OneToMany(mappedBy = "store")
-    private List<Subscription> subscriptions;
+    private List<StoreOffer> storeOffers;
 
     @OneToMany(mappedBy = "store")
     private List<StoreDrink> storeDrinks;
+
+    @OneToMany(mappedBy = "store")
+    private List<FavoriteStore> favoriteStores;
 }

@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create user_offers table
+      id: create user_subscriptions table
       author: Anar Musayev
       changes:
         - createTable:
-            tableName: user_offers
+            tableName: user_subscriptions
             columns:
               - column:
                   name: id
@@ -22,11 +22,11 @@ databaseChangeLog:
                   name: store_offer_id
                   type: BIGINT
                   constraints:
-                    foreignKeyName: user_offers_store_offer_id_fk
+                    foreignKeyName: user_subscriptions_store_offer_id_fk
                     references: store_offers(id)
               - column:
                   name: user_id
                   type: BIGINT
                   constraints:
-                    foreignKeyName: user_offers_user_id_fk
+                    foreignKeyName: user_subscription_user_id_fk
                     references: users(id)

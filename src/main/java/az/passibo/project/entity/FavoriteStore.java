@@ -1,7 +1,6 @@
-package az.coffeeday.stores.dao.entity;
+package az.passibo.project.entity;
 
-import az.passibo.project.entity.Store;
-import az.passibo.project.entity.User;
+import az.passibo.project.stores.dao.entity.Store;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

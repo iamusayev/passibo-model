@@ -5,39 +5,31 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import java.time.LocalDateTime;
 
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Data
 @Entity
-@Table(name = "subscriptions")
-public class Subscription {
+@Table(name = "user_subscriptions")
+public class UserSubscription {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
-    private String name;
-
-    private String description;
-
-    private Integer quantity;
-
-    private Integer durationInDays;
-
-    private Integer dailyLimit;
-
-    private Double price;
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @ManyToOne(fetch = LAZY)
-    private Store store;
+    @JoinColumn(name = "store_offer_id")
+    private StoreOffer storeOffer;
 
-    @ManyToOne(fetch = LAZY)
-    private Drink drink;
+    private Double valueLeft;
 
-    private LocalDateTime createdAt;
+    private Boolean isActive;
 }

@@ -1,6 +1,6 @@
-package az.passibo.project.dao.repository;
+package az.passibo.project.stores.dao.repository;
 
-import az.passibo.project.entity.Store;
+import az.passibo.project.stores.dao.entity.Store;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface StoreRepository extends JpaRepository<Store, Long> {

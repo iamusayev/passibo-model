@@ -1,5 +1,6 @@
 package az.passibo.project.entity;
 
+import az.passibo.project.stores.dao.entity.Store;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -24,6 +25,9 @@ public class StoreOffer {
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "store_id")
     private Store store;
+
+    @ManyToOne(fetch = LAZY)
+    private Drink drink;
 
     private String title;
 
