@@ -29,7 +29,7 @@ dependencies {
     implementation ("org.springdoc:springdoc-openapi-ui:$openApiVersion")
 
 //    liquibase
-    implementation("org.liquibase:liquibase-core:$liquibaseVersion")
+//    implementation("org.liquibase:liquibase-core:$liquibaseVersion")
 
     //database
     implementation 'org.postgresql:postgresql'

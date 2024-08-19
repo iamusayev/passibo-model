@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: create subscriptions table
+      author: Anar Musayev
+      changes:
+        - createTable:
+            tableName: subscriptions
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: daily_limit
+                  type: INTEGER
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: duration_in_days
+                  type: INTEGER
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: price
+                  type: DOUBLE PRECISION
+              - column:
+                  name: quantity
+                  type: INTEGER
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValue: now()
+              - column:
+                  name: drink_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_subscriptions_drink_id
+                    references: drinks(id)
+              - column:
+                  name: store_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_subscriptions_store
+                    references: stores(id)
